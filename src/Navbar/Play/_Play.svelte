@@ -17,12 +17,16 @@
   }
 
   .cards {
-    margin: 0 20px;
     transition: all 0.1s ease-in-out;
     -webkit-user-drag: none;
   }
 
+  .left {
+    margin-right: 20px;
+  }
+
   .right {
+    margin-left: 20px;
     transform: scaleX(-1);
   }
 
