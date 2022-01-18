@@ -7,6 +7,7 @@
 </script>
 
 <nav id="navbar">
+  <div id="background" />
   <div id="buttons">
     <Collection />
     <Decks />
@@ -23,16 +24,25 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 120px;
-    background: url('./background.svg') no-repeat center 80px;
+    height: 8.33vw;
+  }
+
+  #background {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    border-bottom: 2.77vw solid #202020;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    width: 88.88%;
   }
 
   #buttons {
+    width: 88.88%;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-  }
-
-  :global(#buttons > div) {
-    margin: 0 28px;
+    justify-content: space-around;
+    align-items: flex-end;
   }
 </style>

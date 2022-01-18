@@ -9,21 +9,22 @@
   <div id="image">
     <slot />
   </div>
-  <span>{text}</span>
+  <div id="text">{text}</div>
 </div>
 
 <style>
   .NavbarButton {
     position: relative;
-    width: 150px;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    height: 8.33vw;
   }
 
   #background {
+    width: 10.41vw;
     position: absolute;
-    transform: translateY(-8px);
   }
 
   #image {
@@ -36,11 +37,13 @@
     transition: all 0.1s ease-in-out;
   }
 
-  span {
+  #text {
+    position: relative;
+    bottom: 4%;
     z-index: 1;
-    font-size: 20px;
+    font-size: 1.37vw;
     color: #fff;
-    padding-bottom: 12px;
+    white-space: nowrap;
   }
 
   .NavbarButton:hover {
@@ -49,6 +52,6 @@
   }
 
   .NavbarButton:hover #image {
-    transform: translateY(-4px);
+    transform: translateY(-4%);
   }
 </style>

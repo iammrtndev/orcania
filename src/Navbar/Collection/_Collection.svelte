@@ -8,3 +8,10 @@
     <img src={CollectionPNG} alt="" />
   </div>
 </NavbarButton>
+
+<style>
+  img {
+    width: 9.6vw;
+    transform: translateY(18%);
+  }
+</style>

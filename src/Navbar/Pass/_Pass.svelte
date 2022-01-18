@@ -11,6 +11,11 @@
 
 <style>
   #Pass {
-    transform: translateY(16px);
+    position: relative;
+    top: 24%;
+  }
+
+  img {
+    width: 6vw;
   }
 </style>

@@ -1,32 +1,44 @@
 <script>
-  import Cards from './cards.svg'
+  import CardsSVG from './cards.svg'
+  import BackgroundSVG from './background.svg'
 </script>
 
 <div id="Play">
-  <img src={Cards} alt="" class="cards left" />
-  <img src={Cards} alt="" class="cards right" />
+  <img src={BackgroundSVG} alt="" id="background" />
+  <img src={CardsSVG} alt="" class="cards left" />
+  <img src={CardsSVG} alt="" class="cards right" />
 </div>
 
 <style>
   #Play {
-    z-index: 2;
+    position: relative;
+    width: 24vw;
+    height: 8.33vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('./background.svg') no-repeat center 0;
+  }
+
+  #background {
+    width: 16.66vw;
+    position: absolute;
+    bottom: 0;
   }
 
   .cards {
+    position: absolute;
     transition: all 0.1s ease-in-out;
-    -webkit-user-drag: none;
+    width: 9.65vw;
+    z-index: 1;
+    bottom: 0;
   }
 
   .left {
-    margin-right: 20px;
+    left: 4%;
   }
 
   .right {
-    margin-left: 20px;
+    right: 4%;
     transform: scaleX(-1);
   }
 
