@@ -3,13 +3,14 @@
 </script>
 
 <div id="image" style={`background-image: url(${image})`} />
-<div id="overlay" style={`mask-image: url(${image.replace('jpg', 'png')})`} />
+<div id="overlay" style={`mask-image: url(${image})`} />
 
 <style>
   #image {
     width: 100%;
     height: 100%;
     position: absolute;
+    z-index: -10;
     top: 0;
     left: 0;
     background-size: cover;
@@ -18,6 +19,7 @@
 
   #overlay {
     position: absolute;
+    z-index: -10;
     top: 0;
     width: 200px;
     height: 300px;

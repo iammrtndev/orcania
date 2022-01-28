@@ -54,15 +54,15 @@
   }
 
   #armor {
-    background-image: url('./armor.svg');
+    background-image: url('../assets/armor.svg');
   }
 
   #health {
-    background-image: url('./health.svg');
+    background-image: url('../assets/health.svg');
   }
 
   #attack {
-    background-image: url('./attack.svg');
+    background-image: url('../assets/attack.svg');
     width: 48px;
     height: 48px;
     justify-content: center;
@@ -71,7 +71,7 @@
   }
 
   #magic {
-    background-image: url('./magic.svg');
+    background-image: url('../assets/magic.svg');
     width: 48px;
     height: 48px;
     justify-content: center;

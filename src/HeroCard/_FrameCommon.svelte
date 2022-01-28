@@ -1,12 +1,11 @@
 <script lang="ts">
   import FrameCommonSVG from './frame_common.svg'
-  import { Clan, ColorByClan } from './HeroCard'
 
-  export let clan: Clan
+  export let color: string
 </script>
 
 <img src={FrameCommonSVG} alt="" id="shadow" />
-<div id="frame" style={`--color: ${ColorByClan[clan]}`} />
+<div id="frame" style={`--color: ${color}`} />
 
 <style>
   #shadow {
