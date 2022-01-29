@@ -4,11 +4,13 @@
   export let value: Classe
   let img: HTMLImageElement
 
-  $: img != null ? (img.src = `ClasseSelector/${value}.svg`) : null
+  $: if (img) img.src = `ClasseSelector/${value}.svg`
 </script>
 
 <div class="ClasseSelector">
-  <img bind:this={img} alt="" />
+  {#if value.length}
+    <img bind:this={img} alt="" />
+  {/if}
   <select
     bind:value
     on:change={() => (img.src = `ClasseSelector/${value}.svg`)}
@@ -24,6 +26,8 @@
   .ClasseSelector {
     display: inline-block;
     position: relative;
+    width: 24px;
+    height: 24px;
   }
 
   img {
@@ -31,6 +35,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
   }
 
   select {
@@ -39,13 +45,9 @@
     background: #eee;
     box-shadow: inset 0px -2px 4px rgba(0, 0, 0, 0.25);
     border: none;
-    width: 24px;
-    height: 24px;
-    border-radius: 12px;
-  }
-
-  select::-ms-expand {
-    display: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
   }
 
   option {

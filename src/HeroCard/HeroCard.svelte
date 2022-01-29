@@ -8,12 +8,12 @@
   import ImageRare from './_ImageRare.svelte'
   import Stats from './_Stats.svelte'
   import Info from './_Info.svelte'
-  import RaceSelector from 'src/Selectors/RaceSelector/RaceSelector.svelte'
-  import ClassSelector from 'src/Selectors/ClasseSelector/ClasseSelector.svelte'
-  import type { Classe } from 'src/Selectors/ClasseSelector/ClasseSelector'
-  import ClanSelector from 'src/Selectors/ClanSelector/ClanSelector.svelte'
-  import { Clan, ColorByClan } from 'src/Selectors/ClanSelector/ClanSelector'
-  import type { Race } from 'src/Selectors/RaceSelector/RaceSelector'
+  import RaceSelector from 'src/Selector/RaceSelector/RaceSelector.svelte'
+  import ClassSelector from 'src/Selector/ClasseSelector/ClasseSelector.svelte'
+  import type { Classe } from 'src/Selector/ClasseSelector/ClasseSelector'
+  import ClanSelector from 'src/Selector/ClanSelector/ClanSelector.svelte'
+  import { Clan, ColorByClan } from 'src/Selector/ClanSelector/ClanSelector'
+  import type { Race } from 'src/Selector/RaceSelector/RaceSelector'
 
   export let name: string
   export let description: string
@@ -26,6 +26,7 @@
   export let attack: number[]
   export let magic: number
   export let isRare = false
+  export let showDescription = false
 
   let heroCard: HTMLDivElement
 
@@ -45,6 +46,8 @@
 <div
   id="hero-card"
   bind:this={heroCard}
+  on:mouseenter={() => (showDescription = true)}
+  on:mouseleave={() => (showDescription = false)}
   on:mousemove={lookAtCursor}
   on:pointermove={lookAtCursor}
 >
@@ -67,7 +70,7 @@
     <ClassSelector bind:value={classe} />
   </Attributs>
   <Stats {armor} {health} {attack} {magic} />
-  <Info {name} {description} />
+  <Info {name} {description} bind:showDescription />
 </div>
 
 <style>

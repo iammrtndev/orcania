@@ -19,7 +19,7 @@
 <style>
   .Input {
     position: relative;
-    display: inline-block;
+    display: flex;
     background: #271314;
     margin: 2px;
   }
@@ -52,13 +52,13 @@
   }
 
   input {
-    display: block;
     border: none;
     font-family: 'MedievalSharp', cursive;
     font-size: 24px;
     background: none;
     color: #fff;
     padding: 20px;
+    width: 100%;
   }
 
   .hasIcon {

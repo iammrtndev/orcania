@@ -1,31 +1,21 @@
 <script lang="ts">
-  export let value = ''
-  export let placeholder = ''
+  export let value = ""
 </script>
 
 <div class="Textarea">
-  <label for="Textarea">
-    <slot />
-  </label>
-  <textarea
-    bind:value
-    type="text"
-    id="Textarea"
-    {placeholder}
-    class:hasIcon={$$slots.default}
-  />
+  <textarea bind:value />
 </div>
 
 <style>
   .Textarea {
     position: relative;
-    display: inline-block;
     background: #271314;
-    margin: 2px;
+    box-sizing: border-box;
+    display: block;
   }
 
   .Textarea::after {
-    content: '';
+    content: "";
     position: absolute;
     z-index: -1;
     width: 100%;
@@ -51,24 +41,15 @@
     background-blend-mode: overlay, normal;
   }
 
-  Textarea {
+  textarea {
     display: block;
+    resize: none;
     border: none;
-    font-family: 'MedievalSharp', cursive;
+    font-family: "MedievalSharp", cursive;
     font-size: 24px;
     background: none;
     color: #fff;
-    padding: 20px;
-  }
-
-  .hasIcon {
-    padding-left: 60px;
-  }
-
-  label {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
   }
 </style>
